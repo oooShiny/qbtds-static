@@ -20,6 +20,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/scrollbar.js"></script>
     <!-- Magnific Popup CSS & JS -->
     <!--        <link rel="stylesheet" href="magnific/magnific-popup.css">-->
     <!--        <script src="magnific/jquery.magnific-popup.min.js"></script>-->
@@ -1323,7 +1324,8 @@
                 Highcharts.chart('td-by-dist', {
                     chart: {
                         type: 'column',
-                        backgroundColor: '#fff'
+                        backgroundColor: '#fff',
+                        zoomType: 'x'
                     },
                     legend: {
                         enabled: false
@@ -1435,7 +1437,12 @@
                                                       '99',
                                                   ],
                         title: {
-                            text: 'Distance'
+                            text: 'Distance (yards) — drag to zoom'
+                        },
+                        min: 0,
+                        max: 34,
+                        scrollbar: {
+                            enabled: true
                         }
                     },
                     yAxis: {
