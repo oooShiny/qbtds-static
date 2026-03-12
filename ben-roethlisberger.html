@@ -20,7 +20,6 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/scrollbar.js"></script>
     <!-- Magnific Popup CSS & JS -->
     <!--        <link rel="stylesheet" href="magnific/magnific-popup.css">-->
     <!--        <script src="magnific/jquery.magnific-popup.min.js"></script>-->
@@ -902,8 +901,8 @@
     <h1 class="font-light text-3xl text-center">TDs by Week</h1>
       <div class="flex flex-wrap p-10">
                 <p class="pb-10">
-            Ben Roethlisberger has thrown 35              playoff TDs which is
-              about 7.7              % of his total TDs.
+            Ben Roethlisberger has thrown 34              playoff TDs which is
+              about 7.5              % of his total TDs.
           </p>
               <div class="w-screen">
 
@@ -938,6 +937,7 @@
                                                                                                                                       'Week 15',
                                                                                                                                       'Week 16',
                                                                                                                                       'Week 17',
+                                                                                                                                      'Week 18',
                                                                                                                                       'Wildcard',
                                                                                                                                       'Divisional',
                                                                                                                                       'Conference',
@@ -951,12 +951,12 @@
                         title: 'Roethlisberger TDs',
                         plotLines: [{
                             color: 'gray',
-                            value: 22,
+                            value: 21,
                             width: '1',
                             zIndex: 4,
                             dashStyle: 'Dot',
                             label: {
-                                text: 'Average: 22',
+                                text: 'Average: 21',
                                 align: 'left',
                             }
                         }]
@@ -978,11 +978,11 @@
                                 symbol: 'circle'
                             },
                             data: [
-                              27,25,21,18,28,18,25,27,35,29,26,16,34,24,22,27,17,15,11,6,3,                            ],
+                              27,25,21,18,28,18,25,27,35,29,26,16,34,24,22,27,17,1,14,11,6,3,                            ],
                             zoneAxis: 'x',
                             zones: [
                                 {
-                                    value: 17,
+                                    value: 18,
                                     color: '#000000'
                                 },
                                 {
@@ -1103,7 +1103,11 @@
                     chart: {
                         type: 'column',
                         backgroundColor: '#fff',
-                        zoomType: 'x'
+                        zoomType: 'x',
+                        scrollablePlotArea: {
+                            minWidth: 2500,
+                            scrollPositionX: 0
+                        }
                     },
                     legend: {
                         enabled: false
@@ -1215,12 +1219,7 @@
                                                       '99',
                                                   ],
                         title: {
-                            text: 'Distance (yards) — drag to zoom'
-                        },
-                        min: 0,
-                        max: 34,
-                        scrollbar: {
-                            enabled: true
+                            text: 'Distance (yards) — scroll to explore, drag to zoom'
                         }
                     },
                     yAxis: {
